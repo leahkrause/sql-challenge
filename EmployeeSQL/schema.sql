@@ -37,7 +37,6 @@ CREATE TABLE dept_emp (
 	dept_no varchar NOT NULL
 );
 
-
 CREATE TABLE departments (
     depart_no varchar NOT NULL,
     dept_name varchar NOT NULL,
@@ -49,3 +48,6 @@ REFERENCES "departments" ("depart_no");
 
 ALTER TABLE "employees" ADD CONSTRAINT "fk_titles_emp_title_id" FOREIGN KEY("emp_title_id")
 REFERENCES "titles" ("title_id");
+
+ALTER TABLE "dept_emp" ADD CONSTRAINT "fk_employees_emp_no" FOREIGN KEY("emp_no")
+REFERENCES "employees" ("emp_no");
